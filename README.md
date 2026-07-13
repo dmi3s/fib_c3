@@ -1,7 +1,6 @@
 ## Fibonacci Numbers
 
-This program calculates Fibonacci numbers up to a maximum of 186, because t[1D[K
-the `uint128` data type overflows at the 187th number.
+This program calculates Fibonacci numbers up to a maximum of 186, because the `uint128` data type overflows at the 187th number.
 
 The algorithm's idea is based on the following matrix equation:
 
@@ -15,14 +14,9 @@ F_n & F_{n-1}
 \end{pmatrix}
 $$
 
-In addition, the algorithm uses a technique for fast exponentiation:
+In addition, I use the algorithm uses a technique for fast exponentiation.
 
-$$
-A^{n} = 
-$$
-
-This results in a calculation time for Fibonacci numbers that is less than [K
-O(n), and even close to O(log n).
+This results in a calculation time for Fibonacci numbers that is less than $O(n)$, and even close to $O(\log n)$.
 
 ## Running
 
@@ -40,13 +34,10 @@ O(n), and even close to O(log n).
 ```
 fib_c3/
 |--src/
-|  |--[fib.c3](src/fib.c3)              -- Module containing functions for [K
-calculating Fibonacci numbers.
-|  |--[main.c3](src/main.c3)            -- Module containing the `main` fun[3D[K
-function.
+|  |--fib.c3        -- Module containing functions for calculating Fibonacci numbers.
+|  |--main.c3       -- Module containing the `main` function.
 |  tests/
-|  |--[test_fib.c3](tests/test_fib.c3)  -- Module containing tests for func[4D[K
-functions in `fib`.
+|  |--test_fib.c3]  -- Module containing tests for functions in `fib.c3`.
 ```
 
 ## License
