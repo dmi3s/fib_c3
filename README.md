@@ -1,7 +1,8 @@
-## Числа Фибоначчи
-Программа выводит первые 187 чисел Фибоначчи (от 0 до 186), т.к. на 187 числе uint128 переполняется.
+## Fibonacci Numbers
+The program outputs Fibonacci numbers up to 186, as the uint128 data type o[1D[K
+overflows at the 187th number.
 
-Идея алгоритма в том, что 
+The algorithm's idea is based on:
 
 $$
 \begin{pmatrix}
@@ -12,27 +13,38 @@ F_{n+1} & F_n \\
 F_n & F_{n-1}
 \end{pmatrix}
 $$
+plus a fast exponentiation algorithm:
+$$
+  A^{n} =
+$$
 
-Плюс алгоритм быстрого возведения в степень дает время вычисления $O(\log n)$.
+which gives a time complexity for calculating Fibonacci numbers smaller tha[3D[K
+than $O(n)$, and even close to $O(\log n)$.
 
-## Запуск
-* Программы
+## Running the Program
+* To run the program:
   ```bash
   $ c3c run
   ```
-* Тесты
+* To run tests:
   ```bash
   $ c3c test
   ```
 
-## Структура исходного кода.
+## Source Code Structure
 
+<font face="monospace">
 fib_c3/<br/>
-  src/<br/>
-   [fib.c3](src/fib.c3)              -- модуль с функциями для вычисления числа Фибоначчи<br/>
-   [main.c3](src/main.c3)            -- модуль с функцией main<br/>
-  tests/<br/>
-   [test_fib.c3](tests/test_fib.c3)  -- модуль с тестами для функций из fib<br/>
+|--src/<br/>
+|  |--[fib.c3](src/fib.c3)              -- module containing functions for [K
+calculating the Fibonacci number<br/>
+|  |--[main.c3](src/main.c3)            -- module containing the main funct[5D[K
+function<br/>
+|  tests/<br/>
+|  |--[test_fib.c3](tests/test_fib.c3)  -- module containing tests for func[4D[K
+functions from fib<br/>
+</font>
 
-## Лицензия
-Лицензия MIT. См. [LICENSE](LICENSE).
+## License
+MIT License. See [LICENSE](LICENSE).
+
