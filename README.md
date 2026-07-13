@@ -1,8 +1,9 @@
 ## Fibonacci Numbers
-The program outputs Fibonacci numbers up to 186, as the uint128 data type o[1D[K
-overflows at the 187th number.
 
-The algorithm's idea is based on:
+This program calculates Fibonacci numbers up to a maximum of 186, because t[1D[K
+the `uint128` data type overflows at the 187th number.
+
+The algorithm's idea is based on the following matrix equation:
 
 $$
 \begin{pmatrix}
@@ -13,38 +14,42 @@ F_{n+1} & F_n \\
 F_n & F_{n-1}
 \end{pmatrix}
 $$
-plus a fast exponentiation algorithm:
+
+In addition, the algorithm uses a technique for fast exponentiation:
+
 $$
-  A^{n} =
+A^{n} = 
 $$
 
-which gives a time complexity for calculating Fibonacci numbers smaller tha[3D[K
-than $O(n)$, and even close to $O(\log n)$.
+This results in a calculation time for Fibonacci numbers that is less than [K
+O(n), and even close to O(log n).
 
-## Running the Program
+## Running
+
 * To run the program:
   ```bash
   $ c3c run
   ```
-* To run tests:
+* To run the tests:
   ```bash
   $ c3c test
   ```
 
 ## Source Code Structure
 
-<font face="monospace">
-fib_c3/<br/>
-|--src/<br/>
-|  |--[fib.c3](src/fib.c3)              -- module containing functions for [K
-calculating the Fibonacci number<br/>
-|  |--[main.c3](src/main.c3)            -- module containing the main funct[5D[K
-function<br/>
-|  tests/<br/>
-|  |--[test_fib.c3](tests/test_fib.c3)  -- module containing tests for func[4D[K
-functions from fib<br/>
-</font>
+```
+fib_c3/
+|--src/
+|  |--[fib.c3](src/fib.c3)              -- Module containing functions for [K
+calculating Fibonacci numbers.
+|  |--[main.c3](src/main.c3)            -- Module containing the `main` fun[3D[K
+function.
+|  tests/
+|  |--[test_fib.c3](tests/test_fib.c3)  -- Module containing tests for func[4D[K
+functions in `fib`.
+```
 
 ## License
-MIT License. See [LICENSE](LICENSE).
+
+This project is licensed under the MIT license. See [LICENSE](LICENSE).
 

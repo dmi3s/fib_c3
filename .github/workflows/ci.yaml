@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install C3
+      run: |
+        wget -O c3c https://github.com/c3lang/c3c/releases/latest/download/c3c-linux-x86_64
+        chmod +x c3c
+        sudo mv c3c /usr/local/bin/
+
+    - name: Build project
+      run: c3c build --release
+
+    - name: Run tests
+      run: c3c test
