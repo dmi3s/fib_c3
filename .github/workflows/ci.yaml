@@ -12,7 +12,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v5
-    - uses: TimWillebrands/setup-c3@v2
+    # Next line doesn't work
+    # - uses: TimWillebrands/setup-c3@v1
+
+    - name: Install C3
+      run:
+        wget -O c3c https://github.com/c3lang/c3c/releases/latest/download/c3c-linux-x86_64
+        chmod +x c3c
+        sudo mv c3c /usr/local/bin/
 
     - name: Build project
       run: c3c -O2 -g0 build fib_c3
