@@ -7,3 +7,4 @@ fn void main() {
         io::printf("fast_fib(%d) = %d\n", i, fib::fast_fib(i));
     }
 }
+
